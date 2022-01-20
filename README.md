@@ -10,7 +10,8 @@ Recommended platform:
     32G or more disk space
 
 ## Build a Compiler
-
+The RiscV gcc compiler tools can be built and installed from the "github.com/riscv" sources. This will build and install the latest version of tools. Note that it will take a long time to download, build and install the tools. About 6G bytes of space is needed for the build.
+```
 Install Gcc for Risc-V:
     sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev
     sudo apt-get install gawk build-essential bison flex texinfo gperf libtool patchutils
@@ -30,7 +31,7 @@ Configure the tool chain:
 Make the tools:
     sudo make           -- for ELF tools
     sudo make linux     -- for Linux tools
-
+```
 
 ## Using the Tools
 
