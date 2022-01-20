@@ -5,15 +5,15 @@ The Raspberry Pi 4 is a fast multi-core Linux systems. It can easily support the
 and provide an effective platform for embedded RiscV development.
 
 Recommended platform:
-	Raspberry Pi 4
-	4G byte or more of DDRAM memory
-	32G or more disk space
+    Raspberry Pi 4
+    4G byte or more of DDRAM memory
+    32G or more disk space
 
 ## Build a Compiler
 
 Install Gcc for Risc-V:
-	sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev
-	sudo apt-get install gawk build-essential bison flex texinfo gperf libtool patchutils
+    sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev
+    sudo apt-get install gawk build-essential bison flex texinfo gperf libtool patchutils
     sudo apt-get install bc zlib1g-dev libexpat-dev
 
 Remove any previous build:
@@ -21,15 +21,15 @@ Remove any previous build:
     sudo rm -fr ./riscv-gnu-toolchain
 
 Clone the gcc build tree:
-	git clone --recursive https://github.com/riscv/riscv-gnu-toolchain
+    git clone --recursive https://github.com/riscv/riscv-gnu-toolchain
 
 Configure the tool chain:
-	cd riscv-gnu-toolchain
-	./configure --prefix=/opt/riscv
+    cd riscv-gnu-toolchain
+    ./configure --prefix=/opt/riscv
 
 Make the tools:
-	sudo make			-- for ELF tools
-	sudo make linux		-- for Linux tools
+    sudo make           -- for ELF tools
+    sudo make linux     -- for Linux tools
 
 
 ## Using the Tools
