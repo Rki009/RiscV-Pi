@@ -1,7 +1,7 @@
 # RiscV Pi - RiscV for the Raspberry Pi
 
 ## Introduction
-The Raspbery Pi 4 is a fast multi-core linux systems. It can easily support the gcc RiscV development tools
+The Raspberry Pi 4 is a fast multi-core Linux systems. It can easily support the gcc RiscV development tools
 and provide an effective platform for embedded RiscV development.
 
 Recommended platform:
