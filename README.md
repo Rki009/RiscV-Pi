@@ -15,9 +15,10 @@ Configure with "--enable-multilib" to build both rv64 and rv32 versions of the g
 Either ELF (Newlib) or Linux versions of the tools can be built with the "make" or "make Linux" command.
 ```
 Install tools used to build Gcc:
-    sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev
-    sudo apt-get install gawk build-essential bison flex texinfo gperf libtool patchutils
-    sudo apt-get install bc zlib1g-dev libexpat-dev
+    sudo apt-get install autoconf automake autotools-dev curl python3
+	sudo apt-get install libmpc-dev libmpfr-dev libgmp-dev
+    sudo apt-get install gawk build-essential bison flex texinfo gperf
+    sudo apt-get install libtool patchutilsbc zlib1g-dev libexpat-dev
 
 Remove any previous build:
     sudo rm -fr /opt/riscv
