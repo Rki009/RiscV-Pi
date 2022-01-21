@@ -9,7 +9,7 @@ Recommended platform:
     4G byte or more of DDRAM memory
     32G or more disk space
 
-## Build a Compiler
+## Building a RiscV gcc Compiler
 The RiscV gcc compiler tools can be built and installed from the "github.com/riscv" sources. This will build and install the latest version of tools. Note that it will take a long time to download, build and install the tools. About 6G bytes of space is needed for the build.
 Configure with "--enable-multilib" to build both rv64 and rv32 versions of the gcc tools.
 Either ELF (Newlib) or Linux versions of the tools can be built with the "make" or "make Linux" command.
@@ -41,7 +41,6 @@ ELF + --enable-multilib:
     rv32i, rv32iac, rv32im, rv32imac, rv32imafc, rv64imac
 ```
 
-
 ## Using the Tools
 The RiscV gcc compile will be installed into /opt/riscv.
 ```
@@ -72,11 +71,20 @@ Add to your .bashrc file:
     export RISCV_OBJCOPY="/opt/riscv/bin/riscv64-unknown-elf-objcopy"
     export RISCV_OBJDUMP="/opt/riscv/bin/riscv64-unknown-elf-objdump"
 ```
+### What next
+The RiscV gcc can be used to develop and compile C and C++ programs for the 32 bit and 64 bit RISC-V architecture. It can be used to support actual hardware, FGPA soft cores or used with a simulator.
+
+The RiscV-Fast simulator can be used to run rv32im bare metal or Newlib programs at 140+ DMIPS on a Raspberry Pi 4. This is very fast for a simulated environment add allows real-time simulation of 100+ MHz embedded RISC-V hardware or FPGA soft core.
+
+## Notes
+It takes time ... Downloading the gcc repository from git depends on the speed of your internet connection. There is about 6GB of files so it will take a while. Building a RiscV gcc compiler takes about 2 hours on the Raspberry Pi 4 using all cores.
 
 ## RISC-V Links
 Some useful links ...
 
-### Riscv.org:
+### RISC-V
+Wikipedia has a very good overview of the RISC-V architecture.
+https://en.wikipedia.org/wiki/RISC-V
 https://riscv.org/technical/specifications/
 
 ### Unprivileged Spec
