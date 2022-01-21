@@ -64,6 +64,7 @@ Test the Linux compile, Target: riscv64-unknown-linux-gnu:
 
 ### Add paths and shortcuts to .bashrc
 ```
+Add to your .bashrc file:
     export PATH="/opt/riscv/bin:$PATH"
     export RISCV_GCC="/opt/riscv/bin/riscv64-unknown-elf-gcc"
     export RISCV_AS="/opt/riscv/bin/riscv64-unknown-elf-as"
@@ -72,7 +73,7 @@ Test the Linux compile, Target: riscv64-unknown-linux-gnu:
     export RISCV_OBJDUMP="/opt/riscv/bin/riscv64-unknown-elf-objdump"
 ```
 
-## Links
+## RISC-V Links
 Some useful links ...
 
 ### Riscv.org:
