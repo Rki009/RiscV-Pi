@@ -38,7 +38,7 @@ Make the tools (-j4 - use all 4 Raspberry Pi cores):
 ### Libraries built
 ```
 ELF + --enable-multilib:
-	rv32i, rv32iac, rv32im, rv32imac, rv32imafc, rv64imac
+    rv32i, rv32iac, rv32im, rv32imac, rv32imafc, rv64imac
 ```
 
 
@@ -51,13 +51,25 @@ Test the ELF compile, Target: riscv64-unknown-elf:
 Test the Linux compile, Target: riscv64-unknown-linux-gnu:
     /opt/riscv/bin/riscv64-unknown-linux-gnu-gcc -v
 ```
-## Compiling with RiscV gcc:
+### Compiling with RiscV gcc
 ```
 32bit Newlib ELF with rv32i only instructions:
-	/opt/riscv/bin/riscv64-unknown-elf-gcc -O3 -march=rv32i -mabi=ilp32 Test.cpp -o Test32.elf
+    /opt/riscv/bin/riscv64-unknown-elf-gcc -O3 -march=rv32i -mabi=ilp32 Test.cpp -o Test32.elf
+    /opt/riscv/bin/riscv64-unknown-elf-objdump -d -h Test32.elf >Test32.lst
 
 64bit Newlib ELF with rv64id instructions:
-	/opt/riscv/bin/riscv64-unknown-elf-gcc -O3 -march=rv64imac -mabi=lp64 -mtune=rocket -mcmodel=medlow Test.cpp -o Test64.elf
+    /opt/riscv/bin/riscv64-unknown-elf-gcc -O3 -march=rv64imac -mabi=lp64 -mtune=rocket -mcmodel=medlow Test.cpp -o Test64.elf
+    /opt/riscv/bin/riscv64-unknown-elf-objdump -d -h Test64.elf >Test64.lst
+```
+
+### Add paths and shortcuts to .bashrc
+```
+    export PATH="/opt/riscv/bin:$PATH"
+    export RISCV_GCC="/opt/riscv/bin/riscv64-unknown-elf-gcc"
+    export RISCV_AS="/opt/riscv/bin/riscv64-unknown-elf-as"
+    export RISCV_LD="/opt/riscv/bin/riscv64-unknown-elf-ld"
+    export RISCV_OBJCOPY="/opt/riscv/bin/riscv64-unknown-elf-objcopy"
+    export RISCV_OBJDUMP="/opt/riscv/bin/riscv64-unknown-elf-objdump"
 ```
 
 ## Links
@@ -66,10 +78,10 @@ Some useful links ...
 ### Riscv.org:
 https://riscv.org/technical/specifications/
 
-### Unprivileged Spec:
+### Unprivileged Spec
 https://github.com/riscv/riscv-isa-manual/releases/download/Ratified-IMAFDQC/riscv-spec-20191213.pdf
 
-### Privileged Spec:
+### Privileged Spec
 https://github.com/riscv/riscv-isa-manual/releases/download/Priv-v1.12/riscv-privileged-20211203.pdf
 
 
