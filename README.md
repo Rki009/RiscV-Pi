@@ -16,7 +16,7 @@ Either ELF (Newlib) or Linux versions of the tools can be built with the "make" 
 ```
 Install tools used to build Gcc:
     sudo apt-get install autoconf automake autotools-dev curl python3
-	sudo apt-get install libmpc-dev libmpfr-dev libgmp-dev
+    sudo apt-get install libmpc-dev libmpfr-dev libgmp-dev
     sudo apt-get install gawk build-essential bison flex texinfo gperf
     sudo apt-get install libtool patchutilsbc zlib1g-dev libexpat-dev
 
