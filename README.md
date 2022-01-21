@@ -11,6 +11,8 @@ Recommended platform:
 
 ## Build a Compiler
 The RiscV gcc compiler tools can be built and installed from the "github.com/riscv" sources. This will build and install the latest version of tools. Note that it will take a long time to download, build and install the tools. About 6G bytes of space is needed for the build.
+Configure with "--enable-multilib" to build both rv64 and rv32 versions of the gcc tools.
+Either ELF (Newlib) or Linux versions of the tools can be built with the "make" or "make Linux" command.
 ```
 Install tools used to build Gcc:
     sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev
@@ -26,22 +28,36 @@ Clone the gcc build source tree:
 
 Configure the RiscV tool chain:
     cd riscv-gnu-toolchain
-    ./configure --prefix=/opt/riscv
+    ./configure --prefix=/opt/riscv --enable-multilib
 
-Make the tools:
-    sudo make           -- for ELF tools
-    sudo make linux     -- for Linux tools
+Make the tools (-j4 - use all 4 Raspberry Pi cores):
+    sudo make -j4           -- for ELF tools
+    OR
+    sudo make -j4 linux     -- for Linux tools
 ```
+### Libraries built
+```
+ELF + --enable-multilib:
+	rv32i, rv32iac, rv32im, rv32imac, rv32imafc, rv64imac
+```
+
 
 ## Using the Tools
 The RiscV gcc compile will be installed into /opt/riscv.
 ```
 Test the ELF compile, Target: riscv64-unknown-elf:
-	/opt/riscv/bin/riscv64-unknown-elf-gcc -v
+    /opt/riscv/bin/riscv64-unknown-elf-gcc -v
 
 Test the Linux compile, Target: riscv64-unknown-linux-gnu:
-	/opt/riscv/bin/riscv64-unknown-linux-gnu-gcc -v
+    /opt/riscv/bin/riscv64-unknown-linux-gnu-gcc -v
+```
+## Compiling with RiscV gcc:
+```
+32bit Newlib ELF with rv32i only instructions:
+	/opt/riscv/bin/riscv64-unknown-elf-gcc -O3 -march=rv32i -mabi=ilp32 Test.cpp -o Test32.elf
 
+64bit Newlib ELF with rv64id instructions:
+	/opt/riscv/bin/riscv64-unknown-elf-gcc -O3 -march=rv64imac -mabi=lp64 -mtune=rocket -mcmodel=medlow Test.cpp -o Test64.elf
 ```
 
 ## Links
