@@ -66,7 +66,7 @@ Test the Linux compile, Target: riscv64-unknown-linux-gnu:
 ```
 Add to your .bashrc file:
     # RISC-V Compiler
-	export RISCV=/opt/riscv
+    export RISCV=/opt/riscv
     export PATH=$PATH:$RISCV/bin
 ```
 ### What next
