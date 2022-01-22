@@ -65,12 +65,9 @@ Test the Linux compile, Target: riscv64-unknown-linux-gnu:
 ### Add paths and shortcuts to .bashrc
 ```
 Add to your .bashrc file:
-    export PATH="/opt/riscv/bin:$PATH"
-    export RISCV_GCC="/opt/riscv/bin/riscv64-unknown-elf-gcc"
-    export RISCV_AS="/opt/riscv/bin/riscv64-unknown-elf-as"
-    export RISCV_LD="/opt/riscv/bin/riscv64-unknown-elf-ld"
-    export RISCV_OBJCOPY="/opt/riscv/bin/riscv64-unknown-elf-objcopy"
-    export RISCV_OBJDUMP="/opt/riscv/bin/riscv64-unknown-elf-objdump"
+    # RISC-V Compiler
+	export RISCV=/opt/riscv
+    export PATH=$PATH:$RISCV/bin
 ```
 ### What next
 The RiscV gcc can be used to develop and compile C and C++ programs for the 32 bit and 64 bit RISC-V architecture. It can be used to support actual hardware, FGPA soft cores or used with a simulator.
