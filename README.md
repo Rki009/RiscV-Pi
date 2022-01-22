@@ -77,7 +77,7 @@ The RiscV-Fast simulator can be used to run rv32im bare metal or Newlib programs
 ## Notes
 It takes time ... Downloading the gcc repository from git depends on the speed of your internet connection. There is about 6GB of files so it will take a while. Building a RiscV gcc compiler takes about 2 hours on the Raspberry Pi 4 using all cores.
 
-Jan 2022: Successful build of RiscV gcc 11.1 for both ELF and Linux.
+Jan 2022: Successful build multilib version of RiscV gcc 11.1 for both ELF and Linux.
 
 ## RISC-V Links
 Some useful links ...
